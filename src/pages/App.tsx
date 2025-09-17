@@ -20,6 +20,10 @@ export default function App() {
   }, []);
 
   const saveConfig = () => {
+    if (!clientId || !clientSecret) {
+      alert("Please fill the Client ID & Client Secret");
+      return;
+    }
     localStorage.setItem(
       LS_KEY,
       JSON.stringify({ clientId, clientSecret, scopes })
@@ -38,8 +42,8 @@ export default function App() {
     setScopes((prevScopes) => prevScopes.filter((scp) => scp !== scope));
   };
   const startAuth = () => {
-    if (!clientId) {
-      alert("Please fill in Client ID and Redirect URI");
+    if (!clientId || !clientSecret) {
+      alert("Please fill the Client ID & Client Secret");
       return;
     }
 
