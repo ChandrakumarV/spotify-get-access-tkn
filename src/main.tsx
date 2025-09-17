@@ -5,7 +5,7 @@ import App from "./pages/App";
 import Callback from "./pages/Callback";
 
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter basename="spotify-get-access-tkn">
+  <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/callback" element={<Callback />} />
